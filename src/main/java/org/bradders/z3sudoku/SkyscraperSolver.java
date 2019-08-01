@@ -239,8 +239,8 @@ public class SkyscraperSolver {
             // only one building visible: first must be highest
             return ctx.mkAnd(cells.stream().skip(1).map(other -> ctx.mkGt(first, other)).toArray(BoolExpr[]::new));
         } else if (visibleCount > 1) {
-            // 2 or more runs of decreasing
-            // if 4 in cells and visibleCount is 3 then
+            // 2 or more runs of decreasing building heights
+            // Each run takes at least 1 building, so the max length of the first run is:
             int firstRunMaxLen = 1 + cells.size() - visibleCount;
             checkArgument(firstRunMaxLen >= 1);
             List<BoolExpr> options = new ArrayList<>();
