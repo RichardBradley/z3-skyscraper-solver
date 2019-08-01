@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Stream;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.truth.Truth.assertThat;
@@ -263,18 +262,10 @@ public class SkyscraperSolver {
         }
     }
 
-    private static BoolExpr[] array(List<BoolExpr> a, Stream<BoolExpr> b) {
-        return Stream.concat(a.stream(), b).toArray(BoolExpr[]::new);
-    }
-
     private static BoolExpr[] array(List<BoolExpr> a, BoolExpr b) {
         BoolExpr[] acc = new BoolExpr[a.size() + 1];
         a.toArray(acc);
         acc[a.size()] = b;
         return acc;
-    }
-
-    private static BoolExpr[] array(BoolExpr a, Stream<BoolExpr> b) {
-        return Stream.concat(Stream.of(a), b).toArray(BoolExpr[]::new);
     }
 }
