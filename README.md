@@ -1,7 +1,9 @@
-# Sudoku solver in z3
+# Skyscraper solver in z3
 
-Based on the example in the z3 docs at
+Largely based on the Z3 Sudoku example in the z3 docs at
 https://github.com/Z3Prover/z3/blob/master/examples/java/JavaExample.java#L489
+
+Rules at https://www.gmpuzzles.com/blog/skyscrapers-rules-and-info/á
 
 ## Setup
 
